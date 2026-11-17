@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: eee2026-technician-search
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: ADMIN_USERNAME
+        value: Johnson
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
+      - key: EMAIL_ADDRESS
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false

@@ -1,0 +1,720 @@
+{
+ "note": "Drafted from the manual text only, before any retrieval or answer evaluation was run, then frozen with a checksum (questions.sha256). Facts are regular expressions; every group must match the answer (any alternative inside a group).",
+ "questions": [
+  {
+   "id": "Q01",
+   "question": "What kinds of managed sites does the manual describe?",
+   "answerable": true,
+   "gold_sections": [
+    1
+   ],
+   "key_facts": [
+    [
+     "aci"
+    ],
+    [
+     "acw"
+    ],
+    [
+     "gpon"
+    ]
+   ],
+   "reference_answer": "ACI (fiber/GPON) sites, ACW (copper/switch-based) sites, and a small set of dedicated GPON sites."
+  },
+  {
+   "id": "Q02",
+   "question": "Which manufacturers' equipment is used at the dedicated GPON sites?",
+   "answerable": true,
+   "gold_sections": [
+    1
+   ],
+   "key_facts": [
+    [
+     "nokia"
+    ],
+    [
+     "openwifi"
+    ]
+   ],
+   "reference_answer": "Nokia GPON OLT and ONT equipment with Openwifi-brand wireless access points."
+  },
+  {
+   "id": "Q03",
+   "question": "What equipment will I not find when troubleshooting a GPON site?",
+   "answerable": true,
+   "gold_sections": [
+    1
+   ],
+   "key_facts": [
+    [
+     "switch"
+    ],
+    [
+     "ruckus"
+    ]
+   ],
+   "reference_answer": "A traditional network switch and a Ruckus-brand access point are not present."
+  },
+  {
+   "id": "Q04",
+   "question": "A resident at a GPON site reports a connectivity alert. Who should I contact, the resident or the property office?",
+   "answerable": true,
+   "gold_sections": [
+    1,
+    2
+   ],
+   "key_facts": [
+    [
+     "resident"
+    ],
+    [
+     "directly|rather than|instead|not the property"
+    ]
+   ],
+   "reference_answer": "Contact the resident directly rather than the property management office."
+  },
+  {
+   "id": "Q05",
+   "question": "How do I find the phone number of a resident in a specific unit?",
+   "answerable": true,
+   "gold_sections": [
+    2
+   ],
+   "key_facts": [
+    [
+     "secondary address"
+    ],
+    [
+     "unit number"
+    ]
+   ],
+   "reference_answer": "Search the account system for the property, enter the unit number in the secondary address field, then open the account record."
+  },
+  {
+   "id": "Q06",
+   "question": "What two things should I try with the resident on the call before booking a technician?",
+   "answerable": true,
+   "gold_sections": [
+    2
+   ],
+   "key_facts": [
+    [
+     "power"
+    ],
+    [
+     "power.?cycle|unplug"
+    ]
+   ],
+   "reference_answer": "Confirm the equipment has power and ask the resident to power cycle it."
+  },
+  {
+   "id": "Q07",
+   "question": "How long should equipment stay unplugged during a power cycle at a resident's unit?",
+   "answerable": true,
+   "gold_sections": [
+    2
+   ],
+   "key_facts": [
+    [
+     "thirty|30"
+    ]
+   ],
+   "reference_answer": "Roughly thirty seconds."
+  },
+  {
+   "id": "Q08",
+   "question": "An access point is reported offline. What should I check first?",
+   "answerable": true,
+   "gold_sections": [
+    3
+   ],
+   "key_facts": [
+    [
+     "switchport|switch port|link status"
+    ]
+   ],
+   "reference_answer": "Check the link status of the switchport the AP is connected to."
+  },
+  {
+   "id": "Q09",
+   "question": "For an offline AP, how should VLAN 100 be set on the port the AP plugs into?",
+   "answerable": true,
+   "gold_sections": [
+    3
+   ],
+   "key_facts": [
+    [
+     "\\buntagged\\b"
+    ]
+   ],
+   "reference_answer": "VLAN 100 must be present and untagged on the AP's switchport."
+  },
+  {
+   "id": "Q10",
+   "question": "The AP is still offline although all three checks pass. What next?",
+   "answerable": true,
+   "gold_sections": [
+    3
+   ],
+   "key_facts": [
+    [
+     "power.?cycle"
+    ],
+    [
+     "replace|hardware failure|section 6"
+    ]
+   ],
+   "reference_answer": "Power cycle the AP, check it is not in a factory-reset or provisioning state, then treat it as a hardware failure and follow Section 6."
+  },
+  {
+   "id": "Q11",
+   "question": "How should VLAN 100 be configured on the IDF switch port that an in-unit switch connects to?",
+   "answerable": true,
+   "gold_sections": [
+    4
+   ],
+   "key_facts": [
+    [
+     "\\btagged\\b"
+    ]
+   ],
+   "reference_answer": "VLAN 100 must be present and tagged on that port."
+  },
+  {
+   "id": "Q12",
+   "question": "How long can an in-unit switch take to finish rebooting?",
+   "answerable": true,
+   "gold_sections": [
+    4
+   ],
+   "key_facts": [
+    [
+     "sixty|60"
+    ],
+    [
+     "ninety|90"
+    ]
+   ],
+   "reference_answer": "Sixty to ninety seconds on some models."
+  },
+  {
+   "id": "Q13",
+   "question": "What does IDF stand for?",
+   "answerable": true,
+   "gold_sections": [
+    4,
+    5
+   ],
+   "key_facts": [
+    [
+     "intermediate distribution frame"
+    ]
+   ],
+   "reference_answer": "Intermediate Distribution Frame."
+  },
+  {
+   "id": "Q14",
+   "question": "When an IDF switch is offline, which switch's port do I check the link status on?",
+   "answerable": true,
+   "gold_sections": [
+    5
+   ],
+   "key_facts": [
+    [
+     "mdf|core"
+    ]
+   ],
+   "reference_answer": "The port on the MDF/Core switch that the IDF switch is connected to."
+  },
+  {
+   "id": "Q15",
+   "question": "At what point should an IDF outage be escalated instead of troubleshot further?",
+   "answerable": true,
+   "gold_sections": [
+    5,
+    9
+   ],
+   "key_facts": [
+    [
+     "10|ten"
+    ],
+    [
+     "unit"
+    ]
+   ],
+   "reference_answer": "When a power cycle and the checks do not restore service quickly and ten or more units are affected."
+  },
+  {
+   "id": "Q16",
+   "question": "Why should I spend less time troubleshooting an IDF switch than a single in-unit device?",
+   "answerable": true,
+   "gold_sections": [
+    5
+   ],
+   "key_facts": [
+    [
+     "impact|affect|downstream|every device|simultaneous"
+    ]
+   ],
+   "reference_answer": "An IDF outage can affect many devices at once, so quick escalation is preferred."
+  },
+  {
+   "id": "Q17",
+   "question": "What steps do I follow in the systems when replacing an access point or switch?",
+   "answerable": true,
+   "gold_sections": [
+    6
+   ],
+   "key_facts": [
+    [
+     "delete"
+    ],
+    [
+     "new record|add"
+    ],
+    [
+     "mac"
+    ]
+   ],
+   "reference_answer": "Delete the old record from the controller and monitoring platform, clear the event log entry, add the new device as a new record with its new MAC address."
+  },
+  {
+   "id": "Q18",
+   "question": "Can I just change the MAC address on the existing device record to the replacement's address?",
+   "answerable": true,
+   "gold_sections": [
+    6
+   ],
+   "key_facts": [
+    [
+     "\\bnot\\b|never|don't|do not|shouldn't|should not"
+    ],
+    [
+     "monitoring|tracking|history"
+    ]
+   ],
+   "reference_answer": "No. Editing the MAC in place breaks monitoring-platform tracking; create a new record."
+  },
+  {
+   "id": "Q19",
+   "question": "Where can I read the MAC address of the replacement unit?",
+   "answerable": true,
+   "gold_sections": [
+    6
+   ],
+   "key_facts": [
+    [
+     "label"
+    ]
+   ],
+   "reference_answer": "Usually on a label printed on the device."
+  },
+  {
+   "id": "Q20",
+   "question": "How long should a replaced device take to show online in the monitoring platform?",
+   "answerable": true,
+   "gold_sections": [
+    6
+   ],
+   "key_facts": [
+    [
+     "few minutes|minutes"
+    ]
+   ],
+   "reference_answer": "Within a few minutes."
+  },
+  {
+   "id": "Q21",
+   "question": "Which firmware version is approved for 7000-model switches?",
+   "answerable": true,
+   "gold_sections": [
+    7
+   ],
+   "key_facts": [
+    [
+     "08\\.0\\.95kT211"
+    ]
+   ],
+   "reference_answer": "08.0.95kT211"
+  },
+  {
+   "id": "Q22",
+   "question": "Which firmware version is approved for 8000-model switches?",
+   "answerable": true,
+   "gold_sections": [
+    7
+   ],
+   "key_facts": [
+    [
+     "10\\.0\\.10bT253"
+    ]
+   ],
+   "reference_answer": "10.0.10bT253"
+  },
+  {
+   "id": "Q23",
+   "question": "What should I do with a switch that is running an unapproved firmware version?",
+   "answerable": true,
+   "gold_sections": [
+    7
+   ],
+   "key_facts": [
+    [
+     "flag"
+    ],
+    [
+     "update"
+    ]
+   ],
+   "reference_answer": "Flag it for a firmware update before marking it resolved; do not deploy it to a live site."
+  },
+  {
+   "id": "Q24",
+   "question": "How do I check which firmware a managed switch is running?",
+   "answerable": true,
+   "gold_sections": [
+    7
+   ],
+   "key_facts": [
+    [
+     "show.?version"
+    ]
+   ],
+   "reference_answer": "Use the show-version command or its equivalent in the management interface."
+  },
+  {
+   "id": "Q25",
+   "question": "What response time does an Emergency dispatch ticket require?",
+   "answerable": true,
+   "gold_sections": [
+    8
+   ],
+   "key_facts": [
+    [
+     "2|two"
+    ],
+    [
+     "hour"
+    ]
+   ],
+   "reference_answer": "Within 2 hours, same day."
+  },
+  {
+   "id": "Q26",
+   "question": "When must a Priority dispatch ticket be responded to?",
+   "answerable": true,
+   "gold_sections": [
+    8
+   ],
+   "key_facts": [
+    [
+     "next business day|following morning|next morning"
+    ]
+   ],
+   "reference_answer": "First thing the following morning (next business day)."
+  },
+  {
+   "id": "Q27",
+   "question": "Who should I contact before I create a technician dispatch ticket?",
+   "answerable": true,
+   "gold_sections": [
+    8
+   ],
+   "key_facts": [
+    [
+     "property staff|maintenance"
+    ]
+   ],
+   "reference_answer": "On-site property staff or maintenance personnel."
+  },
+  {
+   "id": "Q28",
+   "question": "Which kinds of problems justify an Emergency priority?",
+   "answerable": true,
+   "gold_sections": [
+    8
+   ],
+   "key_facts": [
+    [
+     "shared infrastructure|multiple residents|safety"
+    ]
+   ],
+   "reference_answer": "Outages of shared infrastructure or multiple residents, and safety-related equipment issues."
+  },
+  {
+   "id": "Q29",
+   "question": "How many affected units within what time window make a multi-unit outage event?",
+   "answerable": true,
+   "gold_sections": [
+    9
+   ],
+   "key_facts": [
+    [
+     "10|ten"
+    ],
+    [
+     "2.?hour|two.?hour"
+    ]
+   ],
+   "reference_answer": "10 or more units within a 2-hour window."
+  },
+  {
+   "id": "Q30",
+   "question": "Who do I contact first when escalating to the equipment vendor?",
+   "answerable": true,
+   "gold_sections": [
+    9
+   ],
+   "key_facts": [
+    [
+     "primary"
+    ]
+   ],
+   "reference_answer": "The primary on-call escalation contact for that vendor relationship."
+  },
+  {
+   "id": "Q31",
+   "question": "What do I do if neither on-call escalation contact can be reached?",
+   "answerable": true,
+   "gold_sections": [
+    9
+   ],
+   "key_facts": [
+    [
+     "portal|ticket"
+    ],
+    [
+     "vendor"
+    ]
+   ],
+   "reference_answer": "Open an escalation ticket directly with the vendor's support portal."
+  },
+  {
+   "id": "Q32",
+   "question": "What details should I collect before making an escalation call?",
+   "answerable": true,
+   "gold_sections": [
+    9
+   ],
+   "key_facts": [
+    [
+     "property name|site identifier"
+    ],
+    [
+     "units"
+    ]
+   ],
+   "reference_answer": "Property name or site identifier, number of units affected and how it was counted, when it started, shared failure point, checklists attempted."
+  },
+  {
+   "id": "Q33",
+   "question": "For a circuit-level fault, should I phone the ISP straight away?",
+   "answerable": true,
+   "gold_sections": [
+    10
+   ],
+   "key_facts": [
+    [
+     "ticket"
+    ],
+    [
+     "first"
+    ]
+   ],
+   "reference_answer": "No. Open a ticket through the ISP's express ticketing portal first, then follow up by phone."
+  },
+  {
+   "id": "Q34",
+   "question": "What signs suggest a circuit-level fault rather than an on-site equipment fault?",
+   "answerable": true,
+   "gold_sections": [
+    10
+   ],
+   "key_facts": [
+    [
+     "uplink"
+    ],
+    [
+     "isp|multiple properties"
+    ]
+   ],
+   "reference_answer": "Healthy internal links and VLANs while the uplink toward the ISP is down or flapping, or several properties on the same circuit affected."
+  },
+  {
+   "id": "Q35",
+   "question": "Why do I need an express ticket before phoning the ISP?",
+   "answerable": true,
+   "gold_sections": [
+    10
+   ],
+   "key_facts": [
+    [
+     "ticket number|reference"
+    ]
+   ],
+   "reference_answer": "The ticket number is generally required before the ISP will discuss the case."
+  },
+  {
+   "id": "Q36",
+   "question": "Do I need to email the property manager to replace three units at a property?",
+   "answerable": true,
+   "gold_sections": [
+    11
+   ],
+   "key_facts": [
+    [
+     "case management"
+    ],
+    [
+     "\\bnot\\b|\\bno\\b|don't|do not"
+    ]
+   ],
+   "reference_answer": "No. Process it through the case management system."
+  },
+  {
+   "id": "Q37",
+   "question": "What does the case management system do automatically once a replacement is logged?",
+   "answerable": true,
+   "gold_sections": [
+    11
+   ],
+   "key_facts": [
+    [
+     "shipping"
+    ],
+    [
+     "dispatch"
+    ]
+   ],
+   "reference_answer": "It creates the shipping request and the technician dispatch ticket."
+  },
+  {
+   "id": "Q38",
+   "question": "A resident asks for a copy of their invoice. Who handles that?",
+   "answerable": true,
+   "gold_sections": [
+    12
+   ],
+   "key_facts": [
+    [
+     "property manager"
+    ]
+   ],
+   "reference_answer": "Refer the resident to their property manager."
+  },
+  {
+   "id": "Q39",
+   "question": "Where should an ISP-level billing dispute be sent?",
+   "answerable": true,
+   "gold_sections": [
+    12
+   ],
+   "key_facts": [
+    [
+     "special billing|billing team"
+    ]
+   ],
+   "reference_answer": "To the ISP's dedicated special billing team."
+  },
+  {
+   "id": "Q40",
+   "question": "What must I add to a case when handing it off to the next shift?",
+   "answerable": true,
+   "gold_sections": [
+    13
+   ],
+   "key_facts": [
+    [
+     "comment"
+    ],
+    [
+     "date"
+    ],
+    [
+     "status|next"
+    ]
+   ],
+   "reference_answer": "A comment with the current date, plus a summary of the current status and the next required action."
+  },
+  {
+   "id": "U01",
+   "question": "What is the default admin password for the access points?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U02",
+   "question": "How do I configure a VLAN on a Ruckus controller using the command line?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U03",
+   "question": "What is the warranty period for replacement switches?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U04",
+   "question": "How do I rack-mount a new IDF switch?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U05",
+   "question": "What is the phone number of the primary on-call escalation contact?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U06",
+   "question": "How do I clean the fiber connector on an ONT?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U07",
+   "question": "What is the maximum PoE wattage an access point can draw?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U08",
+   "question": "How do I reset a resident's forgotten WiFi password?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U09",
+   "question": "What are the overtime pay rates for field technicians?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  },
+  {
+   "id": "U10",
+   "question": "What is the IP address of the monitoring platform?",
+   "answerable": false,
+   "gold_sections": [],
+   "key_facts": [],
+   "reference_answer": "Not covered by the manual: the system must refuse."
+  }
+ ]
+}
