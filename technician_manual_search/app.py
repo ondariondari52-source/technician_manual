@@ -1,3 +1,11 @@
+# %% [markdown]
+# ---
+# # Added by Posit Publisher: Connect requires this Quarto frontmatter to render this script.
+# title: "tecnician manual"
+# ---
+
+# %%
+
 import hmac
 import json
 import os
