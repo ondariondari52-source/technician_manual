@@ -10,8 +10,8 @@ id = "01a1eb2b-a690-034f-148e-12c48948f4e0"
 dashboard_url = "https://connect.posit.cloud/ondariondari/content/01a1eb2b-a690-034f-148e-12c48948f4e0"
 direct_url = "https://01a1eb2b-a690-034f-148e-12c48948f4e0.share.connect.posit.cloud"
 logs_url = "https://connect.posit.cloud/ondariondari/content/01a1eb2b-a690-034f-148e-12c48948f4e0/history"
-deployed_at = "2026-11-17T20:26:56.491Z"
-bundle_id = "01a1eb30-c8e8-ccce-a415-60fc2090c610"
+deployed_at = "2026-11-17T20:28:17.371Z"
+bundle_id = "01a1eb32-0ad1-05b9-a34e-4f0fbe5d34d8"
 files = [
     ".posit/publish/deployments/deployment-5F4B.toml",
     ".posit/publish/tecnician manual-RQ3J.toml",
