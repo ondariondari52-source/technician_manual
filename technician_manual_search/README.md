@@ -1,3 +1,11 @@
+# 2 Maintenance-manual question answering with retrieval
+
+Problem. Technicians need quick answers from a long equipment manual, for example a public transformer or UPS manual.
+Core build: split the manual into sections, implement keyword (BM25-style) search in pure Python, and return the best sections with page references.
+AI feature: generate an answer only from the retrieved sections, with citations, and refuse when no section supports an answer.
+Evidence: 40 question–answer pairs written before building; retrieval recall@3 measured separately from answer correctness; refusal rate on 10 unanswerable questions; keyword-only baseline compared with retrieval-augmented generation.
+Modules: M4 (retrieval before generation, evaluating retrieval and answers separately), M6 (prompt injection hidden in manual text).
+
 # Software Engineering EEE 2026: Technician Manual Search
 
 A web app for field technicians. They search a network operations manual and get the best sections with section references,
@@ -16,10 +24,10 @@ Only the standard Python library is used. Needs Python 3.8 or newer.
 
 | File | What it is for |
 |---|---|
-| `DEPLOY.md` | Settings, email, Gemini, hosting online |
-| `CODE_GUIDE.md` | How the code works, for the exam and the presentation |
-| `VALIDATION.md` | The project checked against your lecturer's brief, with evidence and honest gaps |
-| `eval/` | The 50 evaluation questions and the results |
+| `DEPLOY.md` | Settings, email, Gemini |
+| `CODE_GUIDE.md` | How the code works |
+| `VALIDATION.md` | The project checked against requirements, with evidence |
+| `eval/` | The 40 evaluation questions and the results |
 
 ## Test it
 
